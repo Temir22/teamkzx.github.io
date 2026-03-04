@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AirAware – Weather & Air Quality</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body class="theme-dark">
+  <header class="app-header">
+    <div class="header-main">
+      <h1 class="app-title">AirAware</h1>
+      <p class="app-subtitle">Weather, air quality, and smart daily tips</p>
+    </div>
+
+    <button id="theme-toggle" class="theme-toggle" aria-label="Toggle dark/light theme">
+      <span class="theme-toggle__icon">🌙</span>
+      <span class="theme-toggle__label">Dark</span>
+    </button>
+  </header>
+
+  <main class="app-main">
+    <!-- Search + recent cities -->
+    <section class="search-section" aria-labelledby="search-heading">
+      <h2 id="search-heading" class="section-title">Choose your city</h2>
+
+      <div class="search-bar">
+        <div class="search-input-wrapper">
+          <input
+            id="city-input"
+            type="text"
+            autocomplete="off"
+            placeholder="Search for a city (e.g. London, Tokyo)…"
+            aria-label="Search for a city"
+          />
+          <div id="search-suggestions" class="suggestions" role="listbox"></div>
+        </div>
+        <button id="search-button" class="search-button">Search</button>
+      </div>
+
+      <div class="recent-cities" aria-label="Recent cities">
+        <!-- Recent city chips rendered here -->
+      </div>
+
+      <p id="status-message" class="status-message" role="status" aria-live="polite"></p>
+    </section>
+
+    <!-- Current conditions -->
+    <section class="current-section" aria-label="Current conditions">
+      <div class="current-card card fade-in" id="current-card">
+        <header class="current-header">
+          <div>
+            <h2 id="current-city" class="current-city">—</h2>
+            <p id="current-time" class="current-time">—</p>
+          </div>
+          <figure class="current-icon">
+            <span id="current-icon-emoji" class="icon-emoji">⛅</span>
+            <figcaption id="current-description" class="current-desc">—</figcaption>
+          </figure>
+        </header>
+
+        <div class="current-main">
+          <div class="temp-main">
+            <span id="current-temp" class="temp-value">—°</span>
+            <span id="current-feels" class="temp-feels">Feels like —°</span>
+          </div>
+
+          <dl class="current-metrics">
+            <div class="metric">
+              <dt>Humidity</dt>
+              <dd id="current-humidity">—%</dd>
+            </div>
+            <div class="metric">
+              <dt>Wind</dt>
+              <dd id="current-wind">—</dd>
+            </div>
+            <div class="metric">
+              <dt>Pressure</dt>
+              <dd id="current-pressure">— hPa</dd>
+            </div>
+          </dl>
+        </div>
+      </div>
+    </section>
+
+    <!-- Air quality + UV -->
+    <section class="grid-two" aria-label="Air quality and UV index">
+      <article class="card aqi-card fade-in" aria-labelledby="aqi-title">
+        <header class="card-header">
+          <h2 id="aqi-title" class="section-title">Air Quality</h2>
+        </header>
+        <div class="aqi-main">
+          <div class="aqi-indicator" id="aqi-indicator">
+            <span id="aqi-value" class="aqi-value">—</span>
+            <span id="aqi-label" class="aqi-label">—</span>
+          </div>
+          <p id="aqi-main-pollutant" class="aqi-pollutant">Main pollutant: —</p>
+          <p id="aqi-note" class="aqi-note">—</p>
+        </div>
+      </article>
+
+      <article class="card uv-card fade-in" aria-labelledby="uv-title">
+        <header class="card-header">
+          <h2 id="uv-title" class="section-title">UV Index</h2>
+        </header>
+        <div class="uv-main">
+          <div class="uv-indicator" id="uv-indicator">
+            <span id="uv-value" class="uv-value">—</span>
+            <span id="uv-label" class="uv-label">—</span>
+          </div>
+          <p id="uv-recommendation" class="uv-recommendation">—</p>
+        </div>
+      </article>
+    </section>
+
+    <!-- Recommendations -->
+    <section class="recommend-section" aria-labelledby="recommend-title">
+      <article class="card fade-in">
+        <header class="card-header">
+          <h2 id="recommend-title" class="section-title">Today’s recommendations</h2>
+        </header>
+        <p id="recommend-text" class="recommend-text">
+          Select a city to get personalized suggestions for clothing and activities.
+        </p>
+      </article>
+    </section>
+
+    <!-- Hourly forecast -->
+    <section class="forecast-section" aria-labelledby="forecast-title">
+      <header class="forecast-header">
+        <h2 id="forecast-title" class="section-title">Next 24 hours</h2>
+        <p class="forecast-subtitle">Scroll horizontally for more hours</p>
+      </header>
+      <div class="forecast-scroller" id="forecast-scroller" aria-label="24-hour forecast">
+        <!-- Hourly cards rendered here -->
+      </div>
+    </section>
+  </main>
+
+  <footer class="app-footer">
+    <p>
+      Data by <a href="https://open-meteo.com" target="_blank" rel="noopener noreferrer">Open‑Meteo</a>.
+      Built with vanilla JavaScript.
+    </p>
+  </footer>
+
+  <script src="script.js" defer></script>
+</body>
+</html>
