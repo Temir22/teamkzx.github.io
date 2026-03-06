@@ -20,7 +20,6 @@
   </header>
 
   <main class="app-main">
-    <!-- Search + recent cities -->
     <section class="search-section" aria-labelledby="search-heading">
       <h2 id="search-heading" class="section-title">Choose your city</h2>
 
@@ -39,13 +38,11 @@
       </div>
 
       <div class="recent-cities" aria-label="Recent cities">
-        <!-- Recent city chips rendered here -->
       </div>
 
       <p id="status-message" class="status-message" role="status" aria-live="polite"></p>
     </section>
 
-    <!-- Current conditions -->
     <section class="current-section" aria-label="Current conditions">
       <div class="current-card card fade-in" id="current-card">
         <header class="current-header">
@@ -83,7 +80,6 @@
       </div>
     </section>
 
-    <!-- Air quality + UV -->
     <section class="grid-two" aria-label="Air quality and UV index">
       <article class="card aqi-card fade-in" aria-labelledby="aqi-title">
         <header class="card-header">
@@ -113,7 +109,6 @@
       </article>
     </section>
 
-    <!-- Recommendations -->
     <section class="recommend-section" aria-labelledby="recommend-title">
       <article class="card fade-in">
         <header class="card-header">
@@ -125,14 +120,12 @@
       </article>
     </section>
 
-    <!-- Hourly forecast -->
     <section class="forecast-section" aria-labelledby="forecast-title">
       <header class="forecast-header">
         <h2 id="forecast-title" class="section-title">Next 24 hours</h2>
         <p class="forecast-subtitle">Scroll horizontally for more hours</p>
       </header>
       <div class="forecast-scroller" id="forecast-scroller" aria-label="24-hour forecast">
-        <!-- Hourly cards rendered here -->
       </div>
     </section>
   </main>
@@ -146,4 +139,5 @@
 
   <script src="script.js" defer></script>
 </body>
+
 </html>
