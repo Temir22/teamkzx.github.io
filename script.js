@@ -1,7 +1,7 @@
 const cardsContainer = document.getElementById('cards');
 const timeframeButtons = document.querySelectorAll('.time-btn');
 
-// Inline data so the dashboard works without an external data.json file
+
 const data = [
   {
     title: 'Work',
@@ -108,5 +108,5 @@ timeframeButtons.forEach(btn => {
   });
 });
 
-// Initial render
+
 renderCards('daily');
